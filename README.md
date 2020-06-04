@@ -44,6 +44,8 @@ But for such a small task, especially for the small projects for learning purpos
 3. If the file is in main directory, no sub folder
 
 	    gitImages('Username', 'Repo')
+4. If the file name begins with Number let 1713001.jpg
+		then the result will be at {.N1713001jpg}
 
 > ### NOTE
  >1. Repo Must be Public

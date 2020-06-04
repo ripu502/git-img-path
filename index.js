@@ -7,9 +7,13 @@ const inputProcessing = (name) => {
 
 // replace . from img name so object key can be made
 const keyHelper = (name) => {
-    var temp = name.replace('.', '');
-    return temp.replace(/\s/g, '')
-
+    var n1 = name.replace(/\s/g, '');
+    var n2 = n1.replace(/\./g, '');
+    if (!isNaN(n2.charAt(0))) {
+        return 'N' + n2;
+    } else {
+        return n2;
+    }
 }
 
 // making the api path for getting the result for the files of images
