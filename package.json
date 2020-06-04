@@ -1,6 +1,6 @@
 {
   "name": "git-img-path",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node Module which is used to get the path of the imges of public repo of github so that it can be used as a Assest,",
   "main": "index.js",
   "repository": {
