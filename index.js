@@ -40,13 +40,9 @@ module.exports.gitImages = async (username, publicrepoName, foldername) => {
         console.log('repo is not correct');
     }
     const urlpath = makeApiPath(inputProcessing(username), inputProcessing(publicrepoName), inputProcessing(foldername), baseEnd);
-    await fetch(urlpath)
-        .then(res => res.json())
-        .then(async (json) => {
-            ans = await resultGenerator(json, username, publicrepoName);
-            console.log(ans);
-            return ans;
-        });
+    var res = await fetch(urlpath).then(res => res);
+    var object = await res.json()
+    var ans = await resultGenerator(object, username, publicrepoName);
+    // console.log(ans);
+    return ans;
 }
-
-
