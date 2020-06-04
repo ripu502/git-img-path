@@ -51,7 +51,7 @@ But for such a small task, especially for the small projects for learning purpos
  >3. Getting file from the same name
  >4. Suppose the fileName is a.txt the find it at atxt {key}
  >5. Return obj is of following type
->
+>6. File name spaces are ignored in key
   >  {
 	      'key1' : 'value1',
 	       'key2': 'value2'
