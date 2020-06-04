@@ -1,9 +1,16 @@
 const fetch = require('node-fetch');
 
+// changing the spaces with %20
 const inputProcessing = (name) => {
     return name.replace(/\s/g, '%20')
 }
 
+// replace . from img name so object key can be made
+const keyHelper = (name) => {
+    return name.replace('.', '')
+}
+
+// making the api path for getting the result for the files of images
 const makeApiPath = (username, publicrepoName, foldername, base) => {
     if (base == 1) {
         return `https://api.github.com/repos/${username}/${publicrepoName}/contents/`;
@@ -12,21 +19,23 @@ const makeApiPath = (username, publicrepoName, foldername, base) => {
     }
 }
 
+// making the image url from the path of the file from api
 const imageUrlHelper = (username, publicrepoName, path) => {
     let processedPath = inputProcessing(path);
     return `https://raw.githubusercontent.com/${username}/${publicrepoName}/master/${processedPath}`;
 }
 
+// making the result json object from the api
 const resultGenerator = (json, username, publicrepoName) => {
     const responsePack = {};
     json.forEach(element => {
-        responsePack[element.name] = imageUrlHelper(inputProcessing(username), inputProcessing(publicrepoName), element.path);
-        // console.log(responsePack);
+        responsePack[keyHelper(element.name)] = imageUrlHelper(inputProcessing(username), inputProcessing(publicrepoName), element.path);
     })
     return responsePack;
 }
 
 
+// main function of Module
 module.exports.gitImages = async (username, publicrepoName, foldername) => {
     const baseEnd = 0;
     if (username.length == 0) {
@@ -43,6 +52,5 @@ module.exports.gitImages = async (username, publicrepoName, foldername) => {
     var res = await fetch(urlpath).then(res => res);
     var object = await res.json()
     var ans = await resultGenerator(object, username, publicrepoName);
-    // console.log(ans);
     return ans;
 }
