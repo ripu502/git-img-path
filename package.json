@@ -1,0 +1,32 @@
+{
+  "name": "git-img-path",
+  "version": "1.0.0",
+  "description": "Node Module which is used to get the path of the imges of public repo of github so that it can be used as a Assest,",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ripu502/git-img-path.git"
+  },
+  "keywords": [
+    "nodemodule",
+    "git",
+    "images",
+    "url",
+    "npm",
+    "making",
+    "assest",
+    "as",
+    "s3",
+    "of",
+    "amazom"
+  ],
+  "author": "Ripudaman Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ripu502/git-img-path/issues"
+  },
+  "homepage": "https://github.com/ripu502/git-img-path#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
