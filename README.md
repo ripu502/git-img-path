@@ -8,6 +8,12 @@ Sometime in our projects we have to add the images to s3 bucket and we get url o
 
 But for such a small task, especially for the small projects for learning purposes using s3 is not a good option so why don't we use github to serve static file.
 
+> ## Requirement
+> 1. File should stored already on github to use serve statically from url
+> 2. Module will no store file on github, you have to store file manually on public repo of github.
+> 3. Internet connection is must using this module
+> 4. This module uses node-fetch
+
 >## How to use this Module
 
 1. Install the module in working directory
