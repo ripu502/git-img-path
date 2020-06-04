@@ -38,17 +38,16 @@ const resultGenerator = (json, username, publicrepoName) => {
 
 
 // main function of Module
-module.exports.gitImages = async (username, publicrepoName, foldername) => {
+module.exports.gitImages = async (username, publicrepoName, foldername = '') => {
     const baseEnd = 0;
     if (username.length == 0) {
-        console.log('username is wrong');
+        return { error: 'username is wrong' };
     }
     if (foldername.length == 0) {
-        console.log('folder is the base');
         base = 1;
     }
     if (publicrepoName.length == 0) {
-        console.log('repo is not correct');
+        return { error: 'repo is not correct' };
     }
     const urlpath = makeApiPath(inputProcessing(username), inputProcessing(publicrepoName), inputProcessing(foldername), baseEnd);
     var res = await fetch(urlpath).then(res => res);

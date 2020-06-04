@@ -41,9 +41,9 @@ But for such a small task, especially for the small projects for learning purpos
     	console.log(fileResult.indexjs);
     	}
 		helper();
-3. If the file in in main directory no folder, send the folder field empty
+3. If the file is in main directory, no sub folder
 
-	    gitImages('Username', 'Repo',  '')
+	    gitImages('Username', 'Repo')
 
 > ### NOTE
  >1. Repo Must be Public
