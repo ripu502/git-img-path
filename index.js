@@ -9,10 +9,11 @@ const inputProcessing = (name) => {
 const keyHelper = (name) => {
     var n1 = name.replace(/\s/g, '');
     var n2 = n1.replace(/\./g, '');
-    if (!isNaN(n2.charAt(0))) {
-        return 'N' + n2;
+    var n3 = n2.replace(/\-/g, '');
+    if (!isNaN(n3.charAt(0))) {
+        return 'N' + n3;
     } else {
-        return n2;
+        return n3;
     }
 }
 
